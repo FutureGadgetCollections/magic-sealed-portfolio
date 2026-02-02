@@ -1,0 +1,17 @@
+id,date,type,amount,description
+pokemon-charizard-psa10,2020-03-15,BUY,-15000,Initial purchase from auction
+mtg-black-lotus,2019-06-22,BUY,-25000,Acquired from private collector
+pokemon-booster-box,2021-01-10,BUY,-12000,Purchased sealed box
+rolex-submariner,2022-05-18,BUY,-9500,Pre-owned from dealer
+omega-speedmaster,2021-11-03,BUY,-5800,Purchased from Chrono24
+vintage-wine-collection,2020-08-25,BUY,-3200,Wine futures purchase
+art-banksy-print,2019-02-14,BUY,-800,Gallery purchase
+coins-gold-eagles,2022-09-01,BUY,-9600,5 coins at spot plus premium
+sports-jordan-rookie,2020-07-20,BUY,-8500,eBay auction
+vintage-comic-asm1,2018-12-05,BUY,-18000,Heritage Auctions
+PORTFOLIO,2020-01-15,EXPENSE,-250,Insurance premium
+PORTFOLIO,2021-01-15,EXPENSE,-275,Insurance premium
+PORTFOLIO,2022-01-15,EXPENSE,-300,Insurance premium
+PORTFOLIO,2023-01-15,EXPENSE,-325,Insurance premium
+PORTFOLIO,2021-06-01,DIVIDEND,500,Sold duplicate card
+PORTFOLIO,2022-03-15,DIVIDEND,1200,Partial wine sale

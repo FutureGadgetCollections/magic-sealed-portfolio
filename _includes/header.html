@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="container header-content">
+    <a href="{{ '/' | relative_url }}" class="site-title">
+      <span class="logo-icon">&#9670;</span>
+      {{ site.title }}
+    </a>
+
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Dashboard</a>
+      <a href="{{ '/holdings' | relative_url }}" class="nav-link {% if page.url == '/holdings/' or page.url == '/holdings.html' %}active{% endif %}">Holdings</a>
+      <a href="{{ '/performance' | relative_url }}" class="nav-link {% if page.url == '/performance/' or page.url == '/performance.html' %}active{% endif %}">Performance</a>
+    </nav>
+
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

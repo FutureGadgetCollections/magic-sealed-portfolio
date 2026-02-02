@@ -1,0 +1,3 @@
+id,holding_id,date_sold,quantity_sold,sale_proceeds,cost_basis_sold,notes
+sale-001,vintage-wine-partial,2022-03-15,4,1600,1067,Sold 4 bottles from Bordeaux collection
+sale-002,pokemon-duplicates,2021-06-01,1,500,350,Sold duplicate Pokemon card

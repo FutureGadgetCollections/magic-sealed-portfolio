@@ -1,0 +1,29 @@
+# Site settings
+title: Investment Portfolio
+description: Track your investments, calculate returns, and analyze performance
+baseurl: "/Portfolio1" # subpath of your site, e.g. /portfolio
+url: "https://futuregadgettemplates.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .claude
+  - "*.md~"
+
+# Collections (if needed in future)
+collections_dir: collections
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"

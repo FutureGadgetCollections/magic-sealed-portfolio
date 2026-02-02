@@ -1,0 +1,43 @@
+{% assign gain_loss = include.holding.current_value | minus: include.holding.cost_basis %}
+{% assign gain_loss_pct = gain_loss | times: 100.0 | divided_by: include.holding.cost_basis %}
+
+<div class="holding-card" data-category="{{ include.holding.category }}">
+  <div class="holding-header">
+    <h3 class="holding-name">{{ include.holding.name }}</h3>
+    <span class="holding-category">{{ include.holding.category }}</span>
+  </div>
+
+  <div class="holding-details">
+    <div class="holding-stat">
+      <span class="stat-label">Cost Basis</span>
+      <span class="stat-value">${{ include.holding.cost_basis | round: 2 }}</span>
+    </div>
+
+    <div class="holding-stat">
+      <span class="stat-label">Current Value</span>
+      <span class="stat-value">${{ include.holding.current_value | round: 2 }}</span>
+    </div>
+
+    <div class="holding-stat">
+      <span class="stat-label">Gain/Loss</span>
+      <span class="stat-value {% if gain_loss >= 0 %}positive{% else %}negative{% endif %}">
+        {% if gain_loss >= 0 %}+{% endif %}${{ gain_loss | round: 2 }}
+        <small>({% if gain_loss_pct >= 0 %}+{% endif %}{{ gain_loss_pct | round: 1 }}%)</small>
+      </span>
+    </div>
+
+    <div class="holding-stat">
+      <span class="stat-label">Quantity</span>
+      <span class="stat-value">{{ include.holding.quantity }}</span>
+    </div>
+
+    <div class="holding-stat">
+      <span class="stat-label">Acquired</span>
+      <span class="stat-value">{{ include.holding.date_acquired }}</span>
+    </div>
+  </div>
+
+  {% if include.holding.notes %}
+  <p class="holding-notes">{{ include.holding.notes }}</p>
+  {% endif %}
+</div>
