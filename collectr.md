@@ -10,7 +10,6 @@ description: Browse your sealed collection by set
 </header>
 
 <div id="collectr-grid" class="collectr-grid loading">Loading...</div>
-
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
   const COLLECTR_URL = window.SITE_CONFIG.sheets.collectr;
@@ -38,6 +37,13 @@ document.addEventListener('DOMContentLoaded', async function() {
       data.push(row);
     }
     return data;
+  }
+
+  const AVAILABLE_IMAGES = new Set(window.SITE_CONFIG.images || []);
+
+  function resolveImage(imgEl, id) {
+    if (AVAILABLE_IMAGES.has(id + '.png')) { imgEl.src = IMG_PATH + id + '.png'; }
+    else if (AVAILABLE_IMAGES.has(id + '.jpg')) { imgEl.src = IMG_PATH + id + '.jpg'; }
   }
 
   function formatCurrency(value) {
@@ -81,7 +87,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       return `
         <a href="${row.link}" target="_blank" rel="noopener" class="collectr-card">
           <div class="collectr-card-header">
-            <img class="collectr-card-img" src="${IMG_PATH}${row.id}.png" onerror="this.onerror=function(){this.onerror=null;this.src='${IMG_PATH}default.jpg';};this.src='${IMG_PATH}${row.id}.jpg';">
+            <img class="collectr-card-img" data-img-id="${row.id}" src="${IMG_PATH}default.jpg">
             <div class="collectr-card-titles">
               <h2 class="collectr-set-name">${row.name}</h2>
               <span class="collectr-set-id">${row.id}</span>
@@ -112,6 +118,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         </a>
       `;
     }).join('');
+
+    // Resolve card images
+    grid.querySelectorAll('img[data-img-id]').forEach(img => resolveImage(img, img.dataset.imgId));
 
   } catch (e) {
     console.error('Error loading collectr data:', e);

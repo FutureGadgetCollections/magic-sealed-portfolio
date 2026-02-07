@@ -93,6 +93,13 @@ document.addEventListener('DOMContentLoaded', async function() {
     return data;
   }
 
+  const AVAILABLE_IMAGES = new Set(window.SITE_CONFIG.images || []);
+
+  function resolveImage(imgEl, id) {
+    if (AVAILABLE_IMAGES.has(id + '.png')) { imgEl.src = IMG_PATH + id + '.png'; }
+    else if (AVAILABLE_IMAGES.has(id + '.jpg')) { imgEl.src = IMG_PATH + id + '.jpg'; }
+  }
+
   function formatCurrency(value) {
     return new Intl.NumberFormat('en-US', {
       style: 'currency', currency: 'USD',
@@ -157,7 +164,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             data-gainpct="${gainPct}"
             data-lastchecked="${h.last_checked_date || ''}"
             data-notes="${h.notes || ''}">
-          <td class="name-cell"><img class="product-img" src="${IMG_PATH}${h.id}.png" onerror="this.onerror=function(){this.onerror=null;this.src='${IMG_PATH}default.jpg';};this.src='${IMG_PATH}${h.id}.jpg';">${h.name}</td>
+          <td class="name-cell"><img class="product-img" data-img-id="${h.id}" src="${IMG_PATH}default.jpg">${h.name}</td>
           <td><span class="category-badge">${h.set}</span></td>
           <td>${h.location}</td>
           <td class="value-cell">${qty}</td>
@@ -175,6 +182,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         </tr>
       `;
     }).join('');
+
+    // Resolve product images
+    tbody.querySelectorAll('img[data-img-id]').forEach(img => resolveImage(img, img.dataset.imgId));
 
     // Update summary stats
     const totalGain = totalValue - totalCost;

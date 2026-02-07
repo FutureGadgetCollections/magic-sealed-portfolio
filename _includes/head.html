@@ -18,6 +18,7 @@
   <script>
     window.SITE_CONFIG = {
       baseurl: "{{ site.baseurl }}",
+      images: [{% for file in site.static_files %}{% if file.path contains '/assets/images/' %}"{{ file.name }}"{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}],
       sheets: {
         published: "{{ site.sheets.published }}",
         collectr: "{{ site.sheets.collectr }}",
