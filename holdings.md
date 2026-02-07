@@ -30,10 +30,11 @@ description: Complete list of portfolio holdings
         <th data-sort="gain">Gain/Loss</th>
         <th data-sort="gainpct">Gain %</th>
         <th data-sort="date">Date Acquired</th>
+        <th data-sort="lastchecked">Last Checked</th>
       </tr>
     </thead>
     <tbody id="holdings-table-body">
-      <tr><td colspan="9" class="loading">Loading...</td></tr>
+      <tr><td colspan="10" class="loading">Loading...</td></tr>
     </tbody>
   </table>
 </div>
@@ -63,7 +64,7 @@ description: Complete list of portfolio holdings
 
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
-  const HOLDINGS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRcga8n3ozb2Rm8XSq_1kF7z4DV97p6TO4n9Anq33i2W1oyVMA-2HVDsczoopWMkkTOLY62jZd9SKwO/pub?gid=1563230874&single=true&output=tsv';
+  const HOLDINGS_URL = window.SITE_CONFIG.sheets.holdings;
 
   function parseTSV(tsv) {
     const lines = tsv.trim().split('\n');
@@ -72,7 +73,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     const headerMap = {
       'deposit/withdrawal': 'amount',
       'transaction_type': 'type',
-      'date_aquired': 'date_acquired'
+      'date_aquired': 'date_acquired',
+      'last_checked_date': 'last_checked_date'
     };
     const headers = rawHeaders.map(h => headerMap[h] || h);
     const data = [];
@@ -136,6 +138,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             data-gain="${gain}"
             data-gainpct="${gainPct}"
             data-date="${h.date_acquired}"
+            data-lastchecked="${h.last_checked_date || ''}"
             data-notes="${h.notes || ''}">
           <td class="name-cell">${h.name}</td>
           <td><span class="category-badge">${h.category}</span></td>
@@ -150,6 +153,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             ${gainPct >= 0 ? '+' : ''}${gainPct.toFixed(1)}%
           </td>
           <td>${h.date_acquired}</td>
+          <td>${h.last_checked_date || ''}</td>
         </tr>
       `;
     }).join('');
@@ -166,7 +170,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   } catch (e) {
     console.error('Error loading holdings:', e);
-    document.getElementById('holdings-table-body').innerHTML = '<tr><td colspan="9">Error loading data</td></tr>';
+    document.getElementById('holdings-table-body').innerHTML = '<tr><td colspan="10">Error loading data</td></tr>';
   }
 });
 </script>

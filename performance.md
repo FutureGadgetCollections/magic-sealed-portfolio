@@ -113,10 +113,7 @@ description: Portfolio analytics and IRR calculation
 
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
-  const SHEETS = {
-    transactions: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRcga8n3ozb2Rm8XSq_1kF7z4DV97p6TO4n9Anq33i2W1oyVMA-2HVDsczoopWMkkTOLY62jZd9SKwO/pub?gid=0&single=true&output=tsv',
-    sales: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRcga8n3ozb2Rm8XSq_1kF7z4DV97p6TO4n9Anq33i2W1oyVMA-2HVDsczoopWMkkTOLY62jZd9SKwO/pub?gid=845485488&single=true&output=tsv'
-  };
+  const SHEETS = window.SITE_CONFIG.sheets;
 
   function parseTSV(tsv) {
     const lines = tsv.trim().split('\n');

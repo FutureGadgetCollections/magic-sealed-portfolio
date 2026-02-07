@@ -4,6 +4,12 @@ description: Track your crypto cash flow positions, yields, and performance
 baseurl: "/crypto-main-portfolio" # subpath of your site, e.g. /portfolio
 url: "https://futuregadgettemplates.github.io" # the base hostname & protocol for your site
 
+# Google Sheets TSV URLs
+sheets:
+  transactions: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRcga8n3ozb2Rm8XSq_1kF7z4DV97p6TO4n9Anq33i2W1oyVMA-2HVDsczoopWMkkTOLY62jZd9SKwO/pub?gid=0&single=true&output=tsv"
+  holdings: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRcga8n3ozb2Rm8XSq_1kF7z4DV97p6TO4n9Anq33i2W1oyVMA-2HVDsczoopWMkkTOLY62jZd9SKwO/pub?gid=1563230874&single=true&output=tsv"
+  sales: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRcga8n3ozb2Rm8XSq_1kF7z4DV97p6TO4n9Anq33i2W1oyVMA-2HVDsczoopWMkkTOLY62jZd9SKwO/pub?gid=845485488&single=true&output=tsv"
+
 # Build settings
 markdown: kramdown
 highlighter: rouge

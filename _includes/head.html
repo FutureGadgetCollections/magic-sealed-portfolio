@@ -15,6 +15,16 @@
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
+  <script>
+    window.SITE_CONFIG = {
+      sheets: {
+        transactions: "{{ site.sheets.transactions }}",
+        holdings: "{{ site.sheets.holdings }}",
+        sales: "{{ site.sheets.sales }}"
+      }
+    };
+  </script>
+
   <!-- Preload critical assets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

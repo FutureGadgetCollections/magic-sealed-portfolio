@@ -5,12 +5,8 @@
 (function() {
   'use strict';
 
-  // Google Sheets TSV URLs
-  const SHEETS = {
-    transactions: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRcga8n3ozb2Rm8XSq_1kF7z4DV97p6TO4n9Anq33i2W1oyVMA-2HVDsczoopWMkkTOLY62jZd9SKwO/pub?gid=0&single=true&output=tsv',
-    holdings: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRcga8n3ozb2Rm8XSq_1kF7z4DV97p6TO4n9Anq33i2W1oyVMA-2HVDsczoopWMkkTOLY62jZd9SKwO/pub?gid=1563230874&single=true&output=tsv',
-    sales: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRcga8n3ozb2Rm8XSq_1kF7z4DV97p6TO4n9Anq33i2W1oyVMA-2HVDsczoopWMkkTOLY62jZd9SKwO/pub?gid=845485488&single=true&output=tsv'
-  };
+  // Google Sheets TSV URLs (from _config.yml via head.html)
+  const SHEETS = window.SITE_CONFIG && window.SITE_CONFIG.sheets ? window.SITE_CONFIG.sheets : {};
 
   // Cache for fetched data
   let DATA = {
@@ -57,7 +53,8 @@
     const headerMap = {
       'deposit/withdrawal': 'amount',
       'transaction_type': 'type',
-      'date_aquired': 'date_acquired'
+      'date_aquired': 'date_acquired',
+      'last_checked_date': 'last_checked_date'
     };
 
     const headers = rawHeaders.map(h => headerMap[h] || h);
