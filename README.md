@@ -144,4 +144,3 @@ Track realized gains from sold items:
 ## License
 
 See [LICENSE](LICENSE) for details.
-
