@@ -10,6 +10,11 @@ description: Manage your sealed portfolio data
 </header>
 
 <div class="stats-grid">
+  <a href="{{ site.sheets.editable }}" target="_blank" class="stat-card admin-link">
+    <span class="stat-label">Edit</span>
+    <span class="stat-value" style="font-size: 1.25rem;">Google Sheet</span>
+    <small style="color: var(--color-gray-500);">Open editable spreadsheet</small>
+  </a>
   <a href="{{ site.sheets.published }}" target="_blank" class="stat-card admin-link">
     <span class="stat-label">View Only</span>
     <span class="stat-value" style="font-size: 1.25rem;">Published Sheet</span>

@@ -1,16 +1,17 @@
 # Site settings
-title: Pokemon Sealed Portfolio
-description: Track your Pokemon sealed product investments and performance
-baseurl: "/pokemon-sealed-portfolio" # subpath of your site, e.g. /portfolio
+title: Magic Sealed Portfolio
+description: Track your Magic sealed product investments and performance
+baseurl: "/magic-sealed-portfolio" # subpath of your site, e.g. /portfolio
 url: "https://futuregadgettemplates.github.io" # the base hostname & protocol for your site
 
 # Google Sheets URLs
 sheets:
-  published: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqaNjbbTYOMa_1As1caSK93pNIrifP14g0pFVpiArl9hNNhShJN0wAwqBddh1w-txmV8BMb5XhbEHm/pubhtml"
-  collectr: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqaNjbbTYOMa_1As1caSK93pNIrifP14g0pFVpiArl9hNNhShJN0wAwqBddh1w-txmV8BMb5XhbEHm/pub?gid=425722331&single=true&output=tsv"
-  transactions: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqaNjbbTYOMa_1As1caSK93pNIrifP14g0pFVpiArl9hNNhShJN0wAwqBddh1w-txmV8BMb5XhbEHm/pub?gid=0&single=true&output=tsv"
-  holdings: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqaNjbbTYOMa_1As1caSK93pNIrifP14g0pFVpiArl9hNNhShJN0wAwqBddh1w-txmV8BMb5XhbEHm/pub?gid=1563230874&single=true&output=tsv"
-  sales: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqaNjbbTYOMa_1As1caSK93pNIrifP14g0pFVpiArl9hNNhShJN0wAwqBddh1w-txmV8BMb5XhbEHm/pub?gid=845485488&single=true&output=tsv"
+  published: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6tyCPMspYESZQizMPPzuN-ieIRp7zbzXIL6mOyN67h_GhtJBv4qjSyuNFsuD9652-iD5MdBQ5L-90/pubhtml"
+  editable: "https://docs.google.com/spreadsheets/d/1QSC6XSIEGETdfx5oZ38i_OlAN1S4enZY99CQTxW4XfE/edit?usp=sharing"
+  collectr: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6tyCPMspYESZQizMPPzuN-ieIRp7zbzXIL6mOyN67h_GhtJBv4qjSyuNFsuD9652-iD5MdBQ5L-90/pub?gid=425722331&single=true&output=tsv"
+  transactions: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6tyCPMspYESZQizMPPzuN-ieIRp7zbzXIL6mOyN67h_GhtJBv4qjSyuNFsuD9652-iD5MdBQ5L-90/pub?gid=0&single=true&output=tsv"
+  holdings: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6tyCPMspYESZQizMPPzuN-ieIRp7zbzXIL6mOyN67h_GhtJBv4qjSyuNFsuD9652-iD5MdBQ5L-90/pub?gid=1563230874&single=true&output=tsv"
+  sales: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6tyCPMspYESZQizMPPzuN-ieIRp7zbzXIL6mOyN67h_GhtJBv4qjSyuNFsuD9652-iD5MdBQ5L-90/pub?gid=845485488&single=true&output=tsv"
 
 # Build settings
 markdown: kramdown
